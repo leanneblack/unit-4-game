@@ -1,19 +1,8 @@
-
-
 $( document ).ready(function(){
-  
- // Players Random number to reach displayed at start of game //
-
-        // number is between 19-120 //
-
-       
 
 let winningNumber = Math.floor(Math.random()* 101 +19)
         console.log (winningNumber);
         $(".winningNumber").append(winningNumber);
-
-
-
     let budScore = Math.floor(Math.random()* 1 + 0);
     let deschutesScore = Math.floor(Math.random()* 12 + 1);
     let fullSailScore = Math.floor(Math.random()* 12 + 1);
@@ -40,16 +29,6 @@ let winningNumber = Math.floor(Math.random()* 101 +19)
 
     }  
 
-// ??? HELP  if wins and loss not working, will it have to be in each on click function ???? //
-
-//bottles given random number between 1 and 12 //
-
-
-// ??? HELP how to make them not get chosen twice ??? //
-
-// 5 beers displayed for buttons //
-// onclick function for bottle of beers//
-
 $("#bud").on("click", function(){
     playerScore +=  budScore;
     $("#score1").text(budScore);
@@ -60,11 +39,7 @@ $("#bud").on("click", function(){
     else if (playerScore > winningNumber){
         loss();
     }
-    
-
-
 })
-
 
 $("#deschutes").on("click", function(){
     playerScore += deschutesScore;
@@ -76,12 +51,7 @@ $("#deschutes").on("click", function(){
     else if (playerScore > winningNumber){
         loss();
     }
-    
-
-
 })
- 
-
 
 $("#fullSail").on("click", function(){
     playerScore += fullSailScore;
@@ -93,9 +63,6 @@ $("#fullSail").on("click", function(){
     else if (playerScore > winningNumber){
         loss();
     }
-    
-   
-
 })
 
 $("#widmer").on("click", function(){
@@ -108,15 +75,7 @@ $("#widmer").on("click", function(){
     else if (playerScore > winningNumber){
         loss();
     }
-    
-    
-  
-
 })
-   
-
-
-
 var win = function(){
     winCount++;
     alert('Time to celebrate your win, drink up!!')
@@ -126,9 +85,6 @@ var win = function(){
     
     }  
 }
-  
-
-// add loss //
 var loss = function(){
     if (playerScore > winningNumber){  
     lossCount++;
@@ -137,23 +93,5 @@ var loss = function(){
     replay();
     } 
 }
-
-
-
-
-// ??? HELP  if wins and loss not working, will it have to be in each on click function ???? //
-// when player reaches score equal to number displayed they win //
-  
-
-
-
-
-   
-//new random number is generated after win or loss //
-// new random values for beer when game restart //
-
-
-// game restarts once player wins or looses //
-// add wins //
          
 })
